@@ -7,7 +7,8 @@ function App() {
   const [shortUrl, setShortUrl] = useState('')
   const [loading, setLoading] = useState(false)
 
-  axios.defaults.baseURL = 'https://url-shortener-jhzs.onrender.com/'
+  // Use relative URL - this will automatically use the current domain
+  axios.defaults.baseURL = '/'
 
   const handleSubmit = async (e) => {
     e.preventDefault()

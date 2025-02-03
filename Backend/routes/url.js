@@ -17,7 +17,8 @@ router.post('/shorten', async (req, res) => {
 
         // Create URL code
         const urlCode = shortid.generate();
-        const shortUrl = `${process.env.BASE_URL}/${urlCode}`;
+        // Use request object to construct the URL dynamically
+        const shortUrl = `${req.protocol}://${req.get('host')}/${urlCode}`;
 
         // Create new URL
         url = new Url({

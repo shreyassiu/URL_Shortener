@@ -12,14 +12,14 @@ connectDB();
 app.use(express.json());
 
 // Serve static files from the dist folder
-app.use(express.static(path.join(__dirname, '/dist')));
+app.use(express.static(path.join(__dirname, '../Frontend/dist')));
 
 // API Routes
-app.use('/api', require('./routes/url'));
+app.use('/', require('./routes/url'));
 
 // Handle all other routes by serving the frontend
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '/dist/index.html'));
+    res.sendFile(path.join(__dirname, '../Frontend/dist/index.html'));
 });
 
 const PORT = process.env.PORT || 3000;
