@@ -7,7 +7,7 @@ function App() {
   const [shortUrl, setShortUrl] = useState('')
   const [loading, setLoading] = useState(false)
 
-  axios.defaults.baseURL = 'http://localhost:3000'
+  axios.defaults.baseURL = 'https://url-shortener-jhzs.onrender.com/'
 
   const handleSubmit = async (e) => {
     e.preventDefault()
